@@ -1,0 +1,12 @@
+services:
+  private-llm-assistant:
+    image: python:3.11-slim
+    container_name: private-llm-assistant
+    working_dir: /app
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - OLLAMA_HOST=http://host.docker.internal:11434
+    command: sh -c "pip install --no-cache-dir -r requirements.txt && python3 assistant_ollama_liquid.py"
+    restart: unless-stopped

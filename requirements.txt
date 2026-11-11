@@ -1,0 +1,9 @@
+torch
+transformers
+accelerate
+openai-whisper
+SpeechRecognition
+pyttsx3
+requests
+pytest
+pytest-mock
